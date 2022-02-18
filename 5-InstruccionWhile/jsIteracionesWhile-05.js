@@ -1,12 +1,19 @@
 /*
+Leandro Colisko
+División G
+
 Al presionar el botón pedir un sexo
-'f' para femenino, 'm' para masculino.*/
+'f' para femenino, 'm' para masculino.
+*/
 function mostrar()
 {
-	var sexoIngresado;
+	let sexoIngresado;
 	sexoIngresado = prompt("ingrese f ó m .");
 
+	while(sexoIngresado != "m" && sexoIngresado != "f") {
+		sexoIngresado = prompt("Error ingrese f ó m .");
+	}
 
+	txtIdSexo.value = sexoIngresado;
 
-	txtIdSexo.value=sexoIngresado;
 }//FIN DE LA FUNCIÓN

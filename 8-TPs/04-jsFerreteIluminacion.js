@@ -46,34 +46,32 @@ function CalcularPrecio ()
         // cambio el precioFinal de acuerdo al descuento
         switch (cantidadLamparas) {
             case 5:
-                if(marcaLamparas=="ArgentinaLuz"){
+                if(marcaLamparas == "ArgentinaLuz"){
                     descuento = 0.4;
                 } else{
                     descuento = 0.3;
                 }
                 break;
             case 4:
-                if(marcaLamparas=="ArgentinaLuz" || marcaLamparas=="FelipeLamparas") {
+                if(marcaLamparas == "ArgentinaLuz" || marcaLamparas == "FelipeLamparas") {
                     descuento = 0.25;
                 } else{
                     descuento = 0.2;
                 }
                 break;
             case 3:
-                if (marcaLamparas=="ArgentinaLuz") {
+                if (marcaLamparas == "ArgentinaLuz") {
                     descuento = 0.15;
                 } else {
-                    if (marcaLamparas=="FelipeLamparas") {
+                    if (marcaLamparas == "FelipeLamparas") {
                         descuento = 0.1;
                     } else {
                         descuento = 0.05;    
                     }
                 }
                 break;
-            default:
-                break;
-                 //Cierre de Switch
-        }
+
+        } //Cierre de Switch
     } else {
         descuento = 0.5;
     }
@@ -83,9 +81,9 @@ function CalcularPrecio ()
     if (precioFinal > 120) {
         impuesto_ibb = precioFinal * 0.1;
         precioFinal += impuesto_ibb;
-        mensaje += "" + precioFinal + " Usted pago " + impuesto_ibb + " de IIBB.";
-    } else{
-        mensaje += "" + precioFinal;
+        mensaje += ` ${precioFinal} Usted pago ${impuesto_ibb} de IIBB.`;
+    } else {
+        mensaje += ` ${precioFinal}`;
     }
     
     document.getElementById("txtIdprecioDescuento").value = precioFinal;
